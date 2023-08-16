@@ -8,10 +8,10 @@ type MasonryComponent = <C extends ElementType = 'div'>(props: MasonryProps<C>) 
 
 const Masonry: MasonryComponent = forwardRef(
   <T extends ElementType = 'div'>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
-    const { gap, as: Component = 'div', columnProps, ...rest } = props;
+    const { gap, as: Component = 'div', columnProps, columns, ...rest } = props;
 
     const uniq = useId();
-    const columnsChildren = useMasonry(props.children, props.columns);
+    const columnsChildren = useMasonry(props.children, columns);
 
     return (
       <Component style={{ display: 'flex', gap }} ref={forwaredRef} {...rest}>
