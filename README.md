@@ -19,7 +19,7 @@ pnpm install react-layout-masonry
 
 or
 
-```pnpm
+```bash
 yarn add react-layout-masonry
 ```
 
