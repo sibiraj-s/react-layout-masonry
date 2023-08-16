@@ -8,7 +8,7 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build",
+    "build:storybook": "storybook build",
     "prepare": "husky install"
   },
   "keywords": [
