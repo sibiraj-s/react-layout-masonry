@@ -19,6 +19,7 @@ const Masonry: MasonryComponent = forwardRef(
           return (
             <Component
               key={`Masonry__Column_${uniq}_${index}`}
+              data-masonry-column={index + 1}
               style={{
                 display: 'flex',
                 flex: 1,

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useWindowWidth = (isResponsive: boolean): number => {
+const useWindowWidth = (isResponsive: boolean = true): number => {
   const [windowWidth, setWindowSize] = useState(window.innerWidth);
 
   const handleResize = useCallback(() => {

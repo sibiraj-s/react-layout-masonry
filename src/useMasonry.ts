@@ -7,7 +7,7 @@ const createEmptyColumns = (count: number): Array<[]> => {
   return Array.from({ length: count }, () => []);
 };
 
-const useMasonry = (children: ReactNode, columns: Columns): ReactNode[][] => {
+const useMasonry = (children: ReactNode, columns?: Columns): ReactNode[][] => {
   const noOfColumns = useColumnsCount(columns);
 
   const columnsChildren = useMemo(() => {
@@ -19,7 +19,7 @@ const useMasonry = (children: ReactNode, columns: Columns): ReactNode[][] => {
       }
     });
 
-    return group;
+    return group.filter((column) => column.length !== 0);
   }, [noOfColumns, children]);
 
   return columnsChildren;

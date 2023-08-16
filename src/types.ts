@@ -25,7 +25,7 @@ export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['re
 export type MasonryProps<T extends ElementType> = PolymorphicComponentPropWithRef<
   T,
   PropsWithChildren<{
-    columns: Columns;
+    columns?: Columns;
     gap?: number;
     columnProps?: PolymorphicComponentPropWithRef<T, {}>;
   }>

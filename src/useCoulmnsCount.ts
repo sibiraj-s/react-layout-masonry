@@ -6,14 +6,14 @@ import findBreakpoint from './breakpoints';
 
 const DEFAULT_COLUMNS = 3;
 
-const useColumnsCount = (columns: Columns): number => {
+const useColumnsCount = (columns?: Columns): number => {
   const isResponsive = typeof columns === 'object';
 
   const windowWidth = useWindowWidth(isResponsive);
 
   const columnsCount = useMemo(() => {
     if (!isResponsive) {
-      return columns;
+      return columns ?? DEFAULT_COLUMNS;
     }
 
     const breakPoint = findBreakpoint(columns, windowWidth);
