@@ -1,10 +1,15 @@
 {
   "name": "react-layout-masonry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Responsive masonry layout for React",
   "type": "module",
+  "repository": "https://github.com/sibiraj-s/react-layout-masonry.git",
+  "bugs": "https://github.com/sibiraj-s/react-layout-masonry/issues",
+  "homepage": "https://github.com/sibiraj-s/react-layout-masonry#readme",
   "main": "./dist/react-layout-masonry.js",
   "module": "./dist/react-layout-masonry.js",
+  "author": "Sibiraj",
+  "license": "ISC",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,6 +21,10 @@
   "files": [
     "dist/"
   ],
+  "keywords": [
+    "react-masonry",
+    "react-layout-masonry"
+  ],
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
@@ -25,12 +34,6 @@
     "prepare": "husky install",
     "prepublishOnly": "is-ci || (npm run build && publint)"
   },
-  "keywords": [
-    "react-masonry",
-    "react-layout-masonry"
-  ],
-  "author": "Sibiraj",
-  "license": "ISC",
   "peerDependencies": {
     "react": "^18.0.0"
   },
