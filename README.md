@@ -1,7 +1,7 @@
 # React Layout Masonry
 
 > React Layout Masonry is a flexible and customizable React component for creating dynamic and fixed/responsive masonry
-layouts.
+> layouts.
 
 ## Installation
 
@@ -85,7 +85,7 @@ The `columnProps` prop allows you to apply additional props to the container of 
 ## Props
 
 - `columns` (number or object, required): The number of columns in the masonry layout, or an object with breakpoints and corresponding column counts.
-- `gap` (number, required): The spacing between columns and rows in pixels.
+- `gap` (number, optional): The spacing between columns and rows in pixels. Defaults to 0.
 - `columnProps` (object, optional): Additional props to be applied to each column, such as className for styling.
 
 ## Examples
