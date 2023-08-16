@@ -53,9 +53,9 @@ const AnimatedLayout: FC = () => {
   }, [inView]);
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="pt-16" ref={ref}>
       {collections.map((collection, index) => (
-        <AnimatePresence key={`Collection__${index}`}>
+        <AnimatePresence key={`Collection__${index}`} mode="popLayout">
           {currentCollection === index && (
             <Masonry
               columns={{ 640: 1, 768: 2, 1024: 3, 1280: 4, 1536: 5 }}
@@ -65,7 +65,6 @@ const AnimatedLayout: FC = () => {
               initial="initial"
               animate={inView ? 'animate' : false}
               exit="exit"
-              className="absolute top-10"
               columnProps={{
                 className: '!gap-y-8',
               }}
