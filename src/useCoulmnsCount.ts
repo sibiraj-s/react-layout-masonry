@@ -20,7 +20,7 @@ const useColumnsCount = (columns: Columns): number => {
     let selectedBreakpoint: null | number = null;
 
     for (const breakPoint in breakPoints) {
-      if (windowWidth >= parseInt(breakPoint)) {
+      if (windowWidth >= parseInt(breakPoint, 10)) {
         selectedBreakpoint = breakPoints[breakPoint];
       } else {
         // Break the loop since we found the appropriate breakpoint

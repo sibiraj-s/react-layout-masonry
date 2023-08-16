@@ -17,7 +17,7 @@ const useWindowWidth = (isResponsive: boolean): number => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isResponsive]);
+  }, [isResponsive, handleResize]);
 
   return windowWidth;
 };
