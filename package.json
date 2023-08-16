@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Responsive masonry layout for React",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
