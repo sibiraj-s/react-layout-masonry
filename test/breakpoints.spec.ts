@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import findBreakpoint from './breakpoints';
+
+import findBreakpoint from '../src/breakpoints';
 
 const specs = [
   [640, 700],

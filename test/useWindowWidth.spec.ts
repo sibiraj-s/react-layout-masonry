@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import useWindowWidth from './useWindowWidth';
+import useWindowWidth from '../src/useWindowWidth';
 
 const originalInnerWidth = window.innerWidth;
 

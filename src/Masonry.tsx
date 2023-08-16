@@ -1,10 +1,10 @@
-import { ElementType, ReactNode, forwardRef, useId } from 'react';
+import React, { ElementType, ReactNode, forwardRef, useId } from 'react';
 
 import { MasonryProps, PolymorphicRef } from './types';
 import useMasonry from './useMasonry';
 import { MasonryItemContext } from './context';
 
-type MasonryComponent = <C extends React.ElementType = 'div'>(props: MasonryProps<C>) => ReactNode;
+type MasonryComponent = <C extends ElementType = 'div'>(props: MasonryProps<C>) => ReactNode;
 
 const Masonry: MasonryComponent = forwardRef(
   <T extends ElementType = 'div'>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {

@@ -1,6 +1,7 @@
-import { renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import useColumnsCount from './useCoulmnsCount';
+import { renderHook } from '@testing-library/react';
+
+import useColumnsCount from '../src/useCoulmnsCount';
 
 const breakpoints = { 640: 1, 768: 2, 1024: 3, 1280: 4, 1536: 5 };
 

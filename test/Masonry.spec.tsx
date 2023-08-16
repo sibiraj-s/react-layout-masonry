@@ -1,6 +1,8 @@
-import { render } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
-import Masonry from './Masonry';
+import React from 'react';
+import { render } from '@testing-library/react';
+
+import Masonry from '../src';
 
 const createItems = (count: number) => Array.from({ length: count }, (_, index) => index + 1);
 const originalInnerWidth = window.innerWidth;

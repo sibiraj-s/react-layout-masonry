@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
+import React from 'react';
 
-import { MasonryItemContext, useMasonryItem } from './context';
+import { MasonryItemContext, useMasonryItem } from '../src/context';
 import { FC, PropsWithChildren } from 'react';
 
 const ItemConsumer = () => {

@@ -1,8 +1,8 @@
-import { renderHook } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+import React, { isValidElement } from 'react';
+import { renderHook } from '@testing-library/react';
 
-import useMasonry from './useMasonry';
-import { isValidElement } from 'react';
+import { useMasonry } from '../src';
 
 const createChildrens = (count: number) =>
   Array.from({ length: count }, (_, index) => <div key={`FakeChildren__${index}`} />);
