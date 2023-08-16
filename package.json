@@ -17,9 +17,6 @@
   ],
   "author": "Sibiraj",
   "license": "ISC",
-  "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2"
-  },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@storybook/addon-essentials": "^7.3.1",
