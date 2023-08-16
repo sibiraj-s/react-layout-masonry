@@ -1,0 +1,45 @@
+{
+  "name": "react-layout-masonry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "react-masonry",
+    "react-layout-masonry"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.3.0",
+    "@storybook/addon-interactions": "^7.3.0",
+    "@storybook/addon-links": "^7.3.0",
+    "@storybook/blocks": "^7.3.0",
+    "@storybook/manager-api": "^7.3.0",
+    "@storybook/react": "^7.3.0",
+    "@storybook/react-vite": "^7.3.0",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/theming": "^7.3.0",
+    "@types/react": "^18.2.20",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.47.0",
+    "eslint-config-pegasus": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.0",
+    "prettier": "^3.0.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.3.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6"
+  }
+}
