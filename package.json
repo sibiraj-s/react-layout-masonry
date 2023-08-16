@@ -1,7 +1,7 @@
 {
   "name": "react-layout-masonry",
   "version": "1.0.0",
-  "description": "",
+  "description": "Responsive masonry layout for React",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "react-masonry",
     "react-layout-masonry"
   ],
-  "author": "",
+  "author": "Sibiraj",
   "license": "ISC",
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2"
@@ -32,6 +32,7 @@
     "autoprefixer": "^10.4.15",
     "eslint": "^8.47.0",
     "eslint-config-pegasus": "^5.0.0",
+    "framer-motion": "^10.15.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.0",
     "prettier": "^3.0.2",

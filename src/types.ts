@@ -1,12 +1,4 @@
-import {
-  ComponentPropsWithRef,
-  ComponentPropsWithoutRef,
-  ComponentType,
-  ElementType,
-  PropsWithChildren,
-  PropsWithRef,
-  ReactElement,
-} from 'react';
+import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactElement } from 'react';
 
 export type Columns = number | Record<number, number>;
 

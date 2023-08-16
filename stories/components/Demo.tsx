@@ -11,7 +11,7 @@ interface DemoProps {
 
 const Demo: FC<DemoProps> = ({ images, columns = 3 }) => {
   return (
-    <Masonry columns={columns} gap={16}>
+    <Masonry columns={columns} gap={16} columnProps={{ className: '!gap-6' }}>
       {images.map((imageUrl) => (
         <Card url={imageUrl} key={imageUrl} />
       ))}
