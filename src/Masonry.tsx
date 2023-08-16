@@ -9,16 +9,16 @@ type MasonryComponent = <C extends React.ElementType = 'div'>(props: MasonryProp
 const Masonry: MasonryComponent = forwardRef(
   <T extends ElementType = 'div'>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
     const { gap = 0, as: Component = 'div', columnProps, ...rest } = props;
-    const columnsChildren = useMasonry(props.children, props.columns);
 
-    const masonryId = useId();
+    const uniq = useId();
+    const columnsChildren = useMasonry(props.children, props.columns);
 
     return (
       <Component style={{ display: 'flex', gap }} ref={forwaredRef} {...rest}>
         {columnsChildren.map((column, index) => {
           return (
             <Component
-              key={`Masonry__Column_${masonryId}_${index}`}
+              key={`Masonry__Column_${uniq}_${index}`}
               style={{
                 display: 'flex',
                 flex: 1,
@@ -31,7 +31,7 @@ const Masonry: MasonryComponent = forwardRef(
                 return (
                   <MasonryItemContext.Provider
                     value={{ column: index, position: childIndex }}
-                    key={`Masonry__Column_Child_${masonryId}_${childIndex}`}
+                    key={`Masonry__Column_Child_${uniq}_${childIndex}`}
                   >
                     {child}
                   </MasonryItemContext.Provider>

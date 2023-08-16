@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactElement } from 'react';
 
-export type Columns = number | Record<number, number>;
+export type BreakPoints = Record<number, number>;
+export type Columns = number | BreakPoints;
 
 export type Components = {
   container?: ReactElement;

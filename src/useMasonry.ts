@@ -3,21 +3,24 @@ import { Children, ReactNode, isValidElement, useMemo } from 'react';
 import useColumnsCount from './useCoulmnsCount';
 import { Columns } from './types';
 
+const createEmptyColumns = (count: number): Array<[]> => {
+  return Array.from({ length: count }, () => []);
+};
+
 const useMasonry = (children: ReactNode, columns: Columns): ReactNode[][] => {
-  const columnsCount = useColumnsCount(columns);
+  const noOfColumns = useColumnsCount(columns);
 
   const columnsChildren = useMemo(() => {
-    const group: ReactNode[][] = Array.from({ length: columnsCount }, () => []);
+    const group: ReactNode[][] = createEmptyColumns(noOfColumns);
 
     Children.forEach(children, (child, index) => {
       if (isValidElement(child)) {
-        const columnNum = index % columnsCount;
-        group[columnNum].push(child);
+        group[index % noOfColumns].push(child);
       }
     });
 
     return group;
-  }, [columnsCount, children]);
+  }, [noOfColumns, children]);
 
   return columnsChildren;
 };

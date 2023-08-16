@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { Columns } from './types';
 import useWindowWidth from './useWindowWidth';
+import findBreakpoint from './breakpoints';
 
 const DEFAULT_COLUMNS = 3;
 
@@ -15,20 +16,8 @@ const useColumnsCount = (columns: Columns): number => {
       return columns;
     }
 
-    const breakPoints = columns;
-
-    let selectedBreakpoint: null | number = null;
-
-    for (const breakPoint in breakPoints) {
-      if (windowWidth >= parseInt(breakPoint, 10)) {
-        selectedBreakpoint = breakPoints[breakPoint];
-      } else {
-        // Break the loop since we found the appropriate breakpoint
-        break;
-      }
-    }
-
-    return selectedBreakpoint ?? DEFAULT_COLUMNS;
+    const breakPoint = findBreakpoint(columns, windowWidth);
+    return columns[breakPoint] ?? DEFAULT_COLUMNS;
   }, [isResponsive, windowWidth, columns]);
 
   return columnsCount;
