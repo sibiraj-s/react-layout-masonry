@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import React, { isValidElement } from 'react';
+import { isValidElement } from 'react';
 import { renderHook } from '@testing-library/react';
 
 import { useMasonry } from '../src';
