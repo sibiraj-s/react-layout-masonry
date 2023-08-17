@@ -49,12 +49,9 @@ const Card: FC<CardProps> = ({ url }) => {
       ref={ref}
     >
       <img className="rounded-md shadow-md" src={url} alt="" />
-      <div className="flex gap-2 items-center">
-        <img src={url} className="h-8 w-8 rounded-full object-cover" />
-        <div className="flex flex-col">
-          <span className="text-lg leading-tight">{author.name}</span>
-          <span className="!text-sm text-slate-500">{author.company}</span>
-        </div>
+      <div className="flex flex-col">
+        <span className="text-lg">{author.name}</span>
+        <span className="!text-sm text-slate-500">{author.company}</span>
       </div>
     </motion.div>
   );
