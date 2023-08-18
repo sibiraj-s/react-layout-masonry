@@ -6,12 +6,19 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://sibiraj-s.github.io',
+  base: '/react-layout-masonry',
   integrations: [
     starlight({
       title: 'React Layout Masonry',
       social: {
         github: 'https://github.com/sibiraj-s/react-layout-masonry',
       },
+      editLink: {
+        baseUrl: 'https://github.com/sibiraj-s/react-layout-masonry/tree/master/docs/',
+      },
+      pagination: true,
+      lastUpdated: true,
       sidebar: [
         {
           label: 'Getting Started',
