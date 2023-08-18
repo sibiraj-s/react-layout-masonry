@@ -11,7 +11,7 @@ rules:
   react-hooks/rules-of-hooks: error
 
 parserOptions:
-  project: tsconfig.eslint.json
+  project: tsconfig.json
 
 overrides:
   - files:
@@ -24,11 +24,6 @@ overrides:
       - .storybook/*.{js,cjs}
     extends:
       - pegasus/node
-  - files:
-      - '*.stories.@(js|jsx|ts|tsx)'
-    extends:
-      - pegasus/typescript
-      - plugin:storybook/recommended
 
 settings:
   react:

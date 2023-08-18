@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, Variants, motion, useInView } from 'framer-motion';
 
 import { diy, fashion, food } from './images';
-import Masonry from '../../src';
+import Masonry from '../../../../src';
 import Card from './AnimatedCard';
 
 const variants: Variants = {
@@ -53,20 +53,20 @@ const AnimatedLayout: FC = () => {
   }, [inView]);
 
   return (
-    <div className="pt-16" ref={ref}>
+    <div className="tw-pt-16" ref={ref}>
       {collections.map((collection, index) => (
         <AnimatePresence key={`Collection__${index}`} mode="popLayout">
           {currentCollection === index && (
             <Masonry
               columns={{ 640: 1, 768: 2, 1024: 3, 1280: 4, 1536: 5 }}
-              gap={24}
               as={motion.div}
               variants={variants}
               initial="initial"
               animate={inView ? 'animate' : false}
               exit="exit"
+              className="tw-gap-6"
               columnProps={{
-                className: '!gap-y-8',
+                className: 'tw-gap-y-8',
               }}
             >
               {collection.map((imageUrl) => (

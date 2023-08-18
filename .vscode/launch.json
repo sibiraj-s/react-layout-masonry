@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docs server",
+      "request": "launch",
+      "command": "./node_modules/.bin/astro dev",
+      "cwd": "${workspaceFolder}/docs",
+      "type": "node-terminal"
+    }
+  ]
+}

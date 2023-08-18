@@ -1,0 +1,100 @@
+---
+title: Installation & Usage
+description: Guide to install and use react-layout-masonry
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+You can install React Layout Masonry using npm, pnpm or yarn:
+
+<Tabs>
+<TabItem label="npm">
+
+```sh
+# install with npm
+npm install react-layout-masonry
+```
+
+</TabItem>
+<TabItem label="pnpm">
+
+```sh
+# install with pnpm
+pnpm install react-layout-masonry
+```
+
+</TabItem>
+<TabItem label="Yarn">
+
+```sh
+# install with Yarn
+yarn add react-layout-masonry
+```
+
+</TabItem>
+</Tabs>
+
+## Usage
+
+### Fixed Columns Layout
+
+Here's an example of how to use React Layout Masonry with a fixed number of columns in your React application:
+
+```jsx
+import Masonry from 'react-layout-masonry';
+
+const FixedColumnsMasonry = () => {
+  return (
+    <Masonry columns={3} gap={16}>
+      {items.map((item) => {
+        return <Item {...item}>
+      })}
+    </Masonry>
+  );
+};
+
+export default FixedColumnsMasonry;
+```
+
+### Responsive Columns Layout
+
+Here's an example of how to use React Layout Masonry with responsive columns in your React application:
+
+```jsx
+import Masonry from 'react-layout-masonry';
+
+const ResponsiveColumnsMasonry = () => {
+  return (
+    <Masonry columns={{ 640: 1, 768: 2, 1024: 3, 1280: 5 }} gap={16}>
+        {items.map((item) => {
+        return <Item {...item}>
+      })}
+    </Masonry>
+  );
+};
+
+export default ResponsiveColumnsMasonry;
+```
+
+## Column Props
+
+The `columnProps` prop allows you to apply additional props to the container of each column. Here's an example:
+
+```jsx
+<Masonry
+  columns={3}
+  gap={16}
+  columnProps={{
+    className: 'custom-column',
+    style: { backgroundColor: 'lightgray' },
+  }}
+>
+  {/* ... */}
+</Masonry>
+```
+
+## Props
+
+- `columns` (number or object, required): The number of columns in the masonry layout, or an object with breakpoints and corresponding column counts.
+- `gap` (number, optional): The spacing between columns and rows in pixels. Defaults to 0.
+- `columnProps` (object, optional): Additional props to be applied to each column, such as className for styling.

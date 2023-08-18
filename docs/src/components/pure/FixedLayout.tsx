@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import Demo from './Demo';
 import { fashion } from './images';

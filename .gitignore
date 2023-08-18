@@ -370,3 +370,7 @@ $RECYCLE.BIN/
 
 # and uncomment the following lines
 # .pnp.*
+
+### Astro ###
+.astro/
+dist/

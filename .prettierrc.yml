@@ -1,7 +1,13 @@
 printWidth: 120
 singleQuote: true
 
+plugins:
+  - prettier-plugin-astro
+
 overrides:
   - files: README.md
     options:
       singleAttributePerLine: true
+  - files: '*.astro'
+    options:
+      parser: astro

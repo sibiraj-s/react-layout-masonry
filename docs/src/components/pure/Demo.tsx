@@ -1,7 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import Masonry from '../../src';
-import { Columns } from '../../src/types';
+import Masonry, { Columns } from '../../../../src';
 import Card from './Card';
 
 interface DemoProps {
@@ -11,7 +10,7 @@ interface DemoProps {
 
 const Demo: FC<DemoProps> = ({ images, columns = 3 }) => {
   return (
-    <Masonry columns={columns} gap={16} columnProps={{ className: '!gap-6' }}>
+    <Masonry columns={columns} className="tw-gap-6" columnProps={{ className: 'tw-gap-6 !tw-m-0' }}>
       {images.map((imageUrl) => (
         <Card url={imageUrl} key={imageUrl} />
       ))}

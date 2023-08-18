@@ -1,0 +1,39 @@
+---
+title: React Layout Masonry | docs
+description: Responsive masonry layout for React.
+template: splash
+hero:
+  title: React Layout Masonry
+  tagline: Create responsive masonry layouts
+  actions:
+    - text: Getting Started
+      link: /guides/installation/
+      icon: right-arrow
+      variant: primary
+    - text: Source Code
+      link: https://github.com/sibiraj-s/react-layout-masonry
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Options
+
+<CardGrid stagger>
+  <Card title="Fixed Layout" icon="rocket">
+    The Columns does not change with screen size
+
+    ```jsx
+    <Masonry columns={3} />
+    ```
+
+  </Card>
+  <Card title="Responsive Layout" icon="rocket">
+    The columns update with window resize based on the given breakpoints
+
+    ```jsx
+    <Masonry columns={{640:1, 768: 2}} />
+    ```
+
+  </Card>
+</CardGrid>
