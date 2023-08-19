@@ -13,6 +13,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.0.2 (2023-08-19)
+
+#### Internal
+
+- Fix LICENSE ([8f128c3](https://github.com/sibiraj-s/react-layout-masonry/commit/8f128c3))
+
 ## v1.0.1 (2023-08-16)
 
 #### Bug Fixes
