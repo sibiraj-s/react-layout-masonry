@@ -6,44 +6,42 @@ import { MasonryItemContext } from './context';
 
 type MasonryComponent = <C extends ElementType = 'div'>(props: MasonryProps<C>) => ReactNode;
 
-const Masonry: MasonryComponent = forwardRef(
-  <T extends ElementType = 'div'>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
-    const { gap, as: Component = 'div', columnProps, columns, ...rest } = props;
+const MasonryBase = <T extends ElementType = 'div'>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
+  const { gap, as: Component = 'div', columnProps, columns, ...rest } = props;
 
-    const uniq = useId();
-    const columnsChildren = useMasonry(props.children, columns);
+  const uniq = useId();
+  const columnsChildren = useMasonry(props.children, columns);
 
-    return (
-      <Component style={{ display: 'flex', gap }} ref={forwaredRef} {...rest}>
-        {columnsChildren.map((column, index) => {
-          return (
-            <Component
-              key={`Masonry__Column_${uniq}_${index}`}
-              data-masonry-column={index + 1}
-              style={{
-                display: 'flex',
-                flex: 1,
-                flexDirection: 'column',
-                gap,
-              }}
-              {...columnProps}
-            >
-              {column.map((child, childIndex) => {
-                return (
-                  <MasonryItemContext.Provider
-                    value={{ column: index, position: childIndex }}
-                    key={`Masonry__Column_Child_${uniq}_${childIndex}`}
-                  >
-                    {child}
-                  </MasonryItemContext.Provider>
-                );
-              })}
-            </Component>
-          );
-        })}
-      </Component>
-    );
-  },
-);
+  return (
+    <Component style={{ display: 'flex', gap }} ref={forwaredRef} {...rest}>
+      {columnsChildren.map((column, index) => {
+        return (
+          <Component
+            key={`Masonry__Column_${uniq}_${index}`}
+            data-masonry-column={index + 1}
+            style={{
+              display: 'flex',
+              flex: 1,
+              flexDirection: 'column',
+              gap,
+            }}
+            {...columnProps}
+          >
+            {column.map((child, childIndex) => {
+              return (
+                <MasonryItemContext.Provider
+                  value={{ column: index, position: childIndex }}
+                  key={`Masonry__Column_Child_${uniq}_${childIndex}`}
+                >
+                  {child}
+                </MasonryItemContext.Provider>
+              );
+            })}
+          </Component>
+        );
+      })}
+    </Component>
+  );
+};
 
-export default Masonry;
+export const Masonry = forwardRef(MasonryBase) as MasonryComponent;

@@ -1,4 +1,4 @@
-import Masonry from './Masonry';
+import { Masonry } from './Masonry';
 import useMasonry from './useMasonry';
 import { useMasonryItem } from './context';
 

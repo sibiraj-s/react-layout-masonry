@@ -4,6 +4,7 @@ extends:
   - pegasus
   - pegasus/browser
   - pegasus/react
+  - prettier
 
 rules:
   react/react-in-jsx-scope: off
@@ -11,19 +12,19 @@ rules:
   react-hooks/rules-of-hooks: error
 
 parserOptions:
-  project: tsconfig.json
+  project: tsconfig.eslint.json
 
 overrides:
   - files:
-      - '*.ts'
+      - '**/*.ts'
+      - '**/*.tsx'
     extends:
       - pegasus/typescript
-
   - files:
-      - scripts/*.js
-      - .storybook/*.{js,cjs}
+      - src/Masonry.tsx
     extends:
-      - pegasus/node
+      - pegasus/typescript
+      - plugin:react/recommended
 
 settings:
   react:
