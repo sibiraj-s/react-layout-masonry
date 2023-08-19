@@ -97,9 +97,6 @@ For examples, usage and customization options, please refer to the [stories](sto
 
 ## Contributing
 
-Contributions are welcome! To contribute to React Layout Masonry, please follow the guidelines outlined in
-[CONTRIBUTING.md](CONTRIBUTING.md).
-
 If you encounter any issues or have questions, please [open an issue](https://github.com/sibiraj-s/react-layout-masonry/issues)
 on our GitHub repository. Make sure to create an issue or discussion first before raising a PR
 
