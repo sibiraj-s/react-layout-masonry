@@ -6,8 +6,8 @@ Start the dev server with
 npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/sibiraj-s/react-layout-masonry/tree/main/docs)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/sibiraj-s/react-layout-masonry/tree/main/docs)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/sibiraj-s/react-layout-masonry/tree/master/docs)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/sibiraj-s/react-layout-masonry/tree/master/docs)
 
 ## 🚀 Project Structure
 
