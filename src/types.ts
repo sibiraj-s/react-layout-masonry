@@ -1,32 +1,26 @@
-import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactElement } from 'react';
+import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 
 export type BreakPoints = Record<number, number>;
 export type Columns = number | BreakPoints;
 
-export type Components = {
-  container?: ReactElement;
+type AsProp<T extends ElementType> = {
+  as?: T;
 };
 
-type AsProp<C extends ElementType> = {
-  as?: C;
+type PropsToOmit<T extends ElementType, P> = keyof (AsProp<T> & P);
+
+type PolymorphicComponentProp<T extends ElementType, Props = {}> = PropsWithChildren<Props & AsProp<T>> &
+  Omit<ComponentPropsWithoutRef<T>, PropsToOmit<T, Props>>;
+
+type PolymorphicComponentPropWithRef<T extends ElementType, Props = {}> = PolymorphicComponentProp<T, Props> & {
+  ref?: PolymorphicRef<T>;
 };
 
-type PropsToOmit<C extends ElementType, P> = keyof (AsProp<C> & P);
+export type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>['ref'];
 
-type PolymorphicComponentProp<C extends ElementType, Props = {}> = PropsWithChildren<Props & AsProp<C>> &
-  Omit<ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
-
-type PolymorphicComponentPropWithRef<C extends ElementType, Props = {}> = PolymorphicComponentProp<C, Props> & {
-  ref?: PolymorphicRef<C>;
+type MasonryOwnProps<T extends ElementType> = {
+  columns?: Columns;
+  gap?: number;
+  columnProps?: PolymorphicComponentPropWithRef<T, {}>;
 };
-
-export type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
-
-export type MasonryProps<T extends ElementType> = PolymorphicComponentPropWithRef<
-  T,
-  PropsWithChildren<{
-    columns?: Columns;
-    gap?: number;
-    columnProps?: PolymorphicComponentPropWithRef<T, {}>;
-  }>
->;
+export type MasonryProps<T extends ElementType> = PolymorphicComponentPropWithRef<T, MasonryOwnProps<T>>;
