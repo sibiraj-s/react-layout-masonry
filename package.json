@@ -28,8 +28,6 @@
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "storybook": "storybook dev -p 6006 --no-open",
-    "build:storybook": "storybook build",
     "build": "rollup -c",
     "prepare": "husky install",
     "prepublishOnly": "is-ci || (npm run build && publint)"
