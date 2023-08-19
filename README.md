@@ -3,6 +3,9 @@
 > React Layout Masonry is a flexible and customizable React component for creating dynamic and fixed/responsive masonry
 > layouts.
 
+[![Tests](https://github.com/sibiraj-s/react-layout-masonry/actions/workflows/tests.yml/badge.svg)](https://github.com/sibiraj-s/react-layout-masonry/actions/workflows/tests.yml)
+[![NPM](https://badgen.net/npm/v/react-layout-masonry)](https://www.npmjs.com/package/react-layout-masonry)
+
 ## Installation
 
 You can install React Layout Masonry using npm, pnpm or yarn:
