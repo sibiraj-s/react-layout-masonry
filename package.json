@@ -9,7 +9,7 @@
   "main": "./dist/react-layout-masonry.js",
   "module": "./dist/react-layout-masonry.js",
   "author": "Sibiraj",
-  "license": "ISC",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -48,6 +48,7 @@
     "commitlint-config-non-conventional": "^1.0.1",
     "eslint": "^8.47.0",
     "eslint-config-pegasus": "^5.0.0",
+    "eslint-config-prettier": "^9.0.0",
     "happy-dom": "^10.10.4",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
