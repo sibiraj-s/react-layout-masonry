@@ -12,7 +12,7 @@ rules:
   react-hooks/rules-of-hooks: error
 
 parserOptions:
-  project: tsconfig.eslint.json
+  project: true
 
 overrides:
   - files:
@@ -20,6 +20,13 @@ overrides:
       - '**/*.tsx'
     extends:
       - pegasus/typescript
+      - prettier
+  - files:
+      - 'docs/**/*.ts'
+      - 'docs/**/*.tsx'
+    parserOptions:
+      project: true
+      tsconfigRootDir: docs/
 
 settings:
   react:
