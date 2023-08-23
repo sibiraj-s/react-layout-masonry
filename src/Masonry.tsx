@@ -1,4 +1,4 @@
-import React, { ElementType, ReactNode, forwardRef, useId } from 'react';
+import { ElementType, ReactNode, forwardRef, useId } from 'react';
 
 import { MasonryProps, PolymorphicRef } from './types';
 import useMasonry from './useMasonry';

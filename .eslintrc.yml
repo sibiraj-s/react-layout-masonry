@@ -20,11 +20,6 @@ overrides:
       - '**/*.tsx'
     extends:
       - pegasus/typescript
-  - files:
-      - src/Masonry.tsx
-    extends:
-      - pegasus/typescript
-      - plugin:react/recommended
 
 settings:
   react:
