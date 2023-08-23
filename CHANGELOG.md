@@ -13,6 +13,20 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.0.3 (2023-08-23)
+
+#### Features
+
+- Add cjs output ([af273b2](https://github.com/sibiraj-s/react-layout-masonry/commit/af273b2))
+
+#### Enhancements
+
+- cleanup types ([811cf7c](https://github.com/sibiraj-s/react-layout-masonry/commit/811cf7c))
+
+#### Internal
+
+- Replace rollup with tsup ([af273b2](https://github.com/sibiraj-s/react-layout-masonry/commit/af273b2))
+
 ## v1.0.2 (2023-08-19)
 
 #### Internal
