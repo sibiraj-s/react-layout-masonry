@@ -13,6 +13,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.0.4 (2023-08-24)
+
+#### Bug Fixes
+
+- Fix columns not generated for empty children ([ed45df2](https://github.com/sibiraj-s/react-layout-masonry/commit/ed45df2))
+
 ## v1.0.3 (2023-08-23)
 
 #### Features
