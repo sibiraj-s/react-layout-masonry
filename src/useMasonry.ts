@@ -19,7 +19,7 @@ const useMasonry = (children: ReactNode, columns?: Columns): ReactNode[][] => {
       }
     });
 
-    return group.filter((column) => column.length !== 0);
+    return group;
   }, [noOfColumns, children]);
 
   return columnsChildren;

@@ -16,7 +16,7 @@ describe('UseMasonry', () => {
     const { result, rerender } = renderHook((props: RenderHookProps = { children: 1 }) => {
       return useMasonry(createChildrens(props.children), props.columns);
     });
-    expect(result.current.length).toBe(1);
+    expect(result.current.length).toBe(3);
 
     rerender({ children: 4 });
     expect(result.current.length).toBe(3);
@@ -31,6 +31,7 @@ describe('UseMasonry', () => {
     expect(result.current.length).toBe(4);
 
     result.current.forEach((column) => {
+      // eslint-disable-next-line max-nested-callbacks
       column.forEach((item) => {
         expect(isValidElement(item)).toBe(true);
       });

@@ -18,7 +18,7 @@ describe('Masonry: Fixed Columns', () => {
       </Masonry>,
     );
 
-    expect(container.querySelectorAll('[data-masonry-column]').length).toBe(1);
+    expect(container.querySelectorAll('[data-masonry-column]').length).toBe(3);
   });
 
   it('should render items in 3 column layout by default', () => {
