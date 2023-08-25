@@ -13,7 +13,12 @@ const MasonryBase = <T extends ElementType = 'div'>(props: MasonryProps<T>, forw
   const columnsChildren = useMasonry(props.children, columns);
 
   return (
-    <Component {...rest} style={{ display: 'flex', gap, ...rest.style }} ref={forwaredRef}>
+    <Component
+      data-masonry-id={`Masonry-${uniq}`}
+      {...rest}
+      style={{ display: 'flex', gap, ...rest.style }}
+      ref={forwaredRef}
+    >
       {columnsChildren.map((column, index) => {
         return (
           <Component

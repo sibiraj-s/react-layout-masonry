@@ -62,6 +62,61 @@ describe('Masonry: Fixed Columns', () => {
 
     expect(container.querySelectorAll('[data-masonry-column]').length).toBe(5);
   });
+
+  it('should set gap property', () => {
+    const items = createItems(10);
+
+    const { container } = render(
+      <Masonry columns={5} gap={10}>
+        {items.map((item) => (
+          <div key={item}>{item}</div>
+        ))}
+      </Masonry>,
+    );
+
+    const masonryContainer = container.querySelector('[data-masonry-id]') as HTMLElement;
+    expect(masonryContainer.style.gap).toBe('10px');
+
+    const column = container.querySelector('[data-masonry-column=1]') as HTMLElement;
+    expect(column.style.gap).toBe('10px');
+  });
+
+  it('should set ColumnProps', () => {
+    const items = createItems(10);
+
+    const CUSTOM_COLUMN_CLASSNAME = 'custom-column-class';
+
+    const { container } = render(
+      <Masonry columns={5} columnProps={{ className: CUSTOM_COLUMN_CLASSNAME }}>
+        {items.map((item) => (
+          <div key={item}>{item}</div>
+        ))}
+      </Masonry>,
+    );
+
+    const column = container.querySelector('[data-masonry-column=1]') as HTMLElement;
+    expect(column.classList.contains(CUSTOM_COLUMN_CLASSNAME)).toBe(true);
+  });
+
+  it('should override styles correctly correctly', () => {
+    const items = createItems(10);
+
+    const { container } = render(
+      <Masonry columns={5} style={{ color: 'purple' }} columnProps={{ style: { color: 'red' } }}>
+        {items.map((item) => (
+          <div key={item}>{item}</div>
+        ))}
+      </Masonry>,
+    );
+
+    const masonryContainer = container.querySelector('[data-masonry-id]') as HTMLElement;
+    expect(masonryContainer.style.display).toBe('flex');
+    expect(masonryContainer.style.color).toBe('purple');
+
+    const column1 = container.querySelector('[data-masonry-column=1]') as HTMLElement;
+    expect(column1.style.display).toBe('flex');
+    expect(column1.style.color).toBe('red');
+  });
 });
 
 describe('Masonry: Responsive Columns', () => {
