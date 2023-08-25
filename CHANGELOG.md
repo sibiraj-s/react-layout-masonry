@@ -13,6 +13,13 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.0.5 (2023-08-25)
+
+#### Bug Fixes
+
+- Fix props spread correctly with style ([4781e8e](https://github.com/sibiraj-s/react-layout-masonry/commit/4781e8e))
+- Fix export types ([655fbbd](https://github.com/sibiraj-s/react-layout-masonry/commit/655fbbd))
+
 ## v1.0.4 (2023-08-24)
 
 #### Bug Fixes
