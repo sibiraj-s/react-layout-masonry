@@ -10,6 +10,7 @@
   "module": "./dist/index.js",
   "author": "Sibiraj",
   "license": "MIT",
+  "sideEffects": false,
   "exports": {
     ".": {
       "require": {
