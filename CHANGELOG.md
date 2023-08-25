@@ -13,6 +13,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.0.6 (2023-08-25)
+
+#### Enhancements
+
+- Mark package as sideEffects free ([05e37db](https://github.com/sibiraj-s/react-layout-masonry/commit/05e37db))
+
 ## v1.0.5 (2023-08-25)
 
 #### Bug Fixes
