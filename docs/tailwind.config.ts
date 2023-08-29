@@ -3,7 +3,6 @@ import colors from 'tailwindcss/colors';
 import starlightPlugin from '@astrojs/starlight-tailwind';
 
 const config: Config = {
-  prefix: 'tw-',
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {

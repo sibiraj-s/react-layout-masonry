@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^2.3.2",
-    "@astrojs/starlight": "^0.7.3",
-    "@astrojs/starlight-tailwind": "^1.0.1",
+    "@astrojs/starlight": "^0.8.0",
+    "@astrojs/starlight-tailwind": "^1.0.2",
     "@astrojs/tailwind": "^4.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",

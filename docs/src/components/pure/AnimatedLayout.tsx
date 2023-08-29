@@ -53,7 +53,7 @@ const AnimatedLayout: FC = () => {
   }, [inView]);
 
   return (
-    <div className="tw-pt-16" ref={ref}>
+    <div className="pt-16" ref={ref}>
       {collections.map((collection, index) => (
         <AnimatePresence key={`Collection__${index}`} mode="popLayout">
           {currentCollection === index && (
@@ -64,9 +64,9 @@ const AnimatedLayout: FC = () => {
               initial="initial"
               animate={inView ? 'animate' : false}
               exit="exit"
-              className="tw-gap-6"
+              className="gap-6"
               columnProps={{
-                className: 'tw-gap-y-8',
+                className: 'gap-y-8',
               }}
             >
               {collection.map((imageUrl) => (

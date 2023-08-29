@@ -9,11 +9,11 @@ const Card: FC<CardProps> = ({ url }) => {
   const author = useMemo(getRandomAuthor, []);
 
   return (
-    <div className="tw-flex tw-flex-col tw-gap-4">
-      <img className="tw-rounded-md tw-max-w-full" src={url} alt="" />
-      <div className="tw-flex tw-flex-col !tw-mt-0">
-        <span className="tw-text-lg">{author.name}</span>
-        <span className="tw-text-sm tw-text-slate-500">{author.company}</span>
+    <div className="flex flex-col gap-4">
+      <img className="rounded-md max-w-full" src={url} alt="" />
+      <div className="flex flex-col !mt-0">
+        <span className="text-lg">{author.name}</span>
+        <span className="text-sm text-slate-500">{author.company}</span>
       </div>
     </div>
   );

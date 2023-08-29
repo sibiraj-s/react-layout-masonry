@@ -46,13 +46,13 @@ const Card: FC<CardProps> = ({ url }) => {
       initial="inital"
       animate={inView ? 'animate' : false}
       exit="exit"
-      className="tw-flex tw-flex-col tw-gap-4"
+      className="flex flex-col gap-4"
       ref={ref}
     >
-      <img className="tw-rounded-md tw-shadow-md tw-max-w-full h-full" src={url} alt="" />
-      <div className="tw-flex tw-flex-col !tw-m-0">
-        <span className="tw-text-lg">{author.name}</span>
-        <span className="tw-text-sm tw-text-slate-500">{author.company}</span>
+      <img className="rounded-md shadow-md max-w-full h-full" src={url} alt="" />
+      <div className="flex flex-col !m-0">
+        <span className="text-lg">{author.name}</span>
+        <span className="text-sm text-slate-500">{author.company}</span>
       </div>
     </motion.div>
   );
