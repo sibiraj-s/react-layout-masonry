@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 import getRandomAuthor from './random-author';
 
 interface CardProps {

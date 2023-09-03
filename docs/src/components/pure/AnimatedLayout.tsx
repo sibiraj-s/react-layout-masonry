@@ -1,5 +1,5 @@
-import { FC, useEffect, useRef, useState } from 'react';
-import { AnimatePresence, Variants, motion, useInView } from 'framer-motion';
+import { type FC, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, type Variants, motion, useInView } from 'framer-motion';
 
 import { diy, fashion, food } from './images';
 import Masonry from '../../../../src';
