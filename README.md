@@ -99,7 +99,7 @@ The `columnProps` prop allows you to apply additional props to the container of 
 
 ## Examples
 
-For examples, usage and customization options, please refer to the [stories](stories) directory in this repository.
+For examples, usage and customization options, please refer to the [docs](docs/src/components/) directory in this repository.
 
 ## Contributing
 
