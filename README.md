@@ -37,9 +37,12 @@ import Masonry from 'react-layout-masonry';
 
 const FixedColumnsMasonry = () => {
   return (
-    <Masonry columns={3} gap={16}>
+    <Masonry
+      columns={3}
+      gap={16}
+    >
       {items.map((item) => {
-        return <Item {...item}>
+        return <Item {...item} />;
       })}
     </Masonry>
   );
@@ -57,9 +60,12 @@ import Masonry from 'react-layout-masonry';
 
 const ResponsiveColumnsMasonry = () => {
   return (
-    <Masonry columns={{ 640: 1, 768: 2, 1024: 3, 1280: 5 }} gap={16}>
-        {items.map((item) => {
-        return <Item {...item}>
+    <Masonry
+      columns={{ 640: 1, 768: 2, 1024: 3, 1280: 5 }}
+      gap={16}
+    >
+      {items.map((item) => {
+        return <Item {...item} />;
       })}
     </Masonry>
   );
