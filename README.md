@@ -74,6 +74,23 @@ const ResponsiveColumnsMasonry = () => {
 export default ResponsiveColumnsMasonry;
 ```
 
+or use the array syntax
+
+```js
+<Masonry columns={[1, undefined, undefined, 3]} />
+```
+
+this will be converted to
+
+```json
+{
+  "640": 1,
+  "1280": 3
+}
+```
+
+The array's order corresponds to the default breakpoints, which are `640, 786, 1024, 1280, 1536`.
+
 ### Column Props
 
 The `columnProps` prop allows you to apply additional props to the container of each column. Here's an example:

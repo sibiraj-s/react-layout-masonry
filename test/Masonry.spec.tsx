@@ -128,7 +128,7 @@ describe('Masonry: Responsive Columns', () => {
   const breakpointSpec = Object.entries(breakpoints).map(([key, value]) => [value <= 1 ? 1 : value - 1, Number(key)]);
   const items = createItems(10);
 
-  it.each(breakpointSpec)('should render %i columns with breakpoint %1', (noOfColumns, windowWidth) => {
+  it.each(breakpointSpec)('should render %i columns with breakpoint %i', (noOfColumns, windowWidth) => {
     window.innerWidth = windowWidth;
 
     const { container } = render(

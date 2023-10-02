@@ -1,7 +1,10 @@
 import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 
-export type BreakPoints = Record<number, number>;
-export type Columns = number | BreakPoints;
+export type BreakPoints = Record<number, number> | Array<number | undefined>;
+export type BreakPointsArray = Array<number | undefined>;
+
+export type BreakPointSpec = BreakPoints | BreakPointsArray;
+export type Columns = number | BreakPointSpec;
 
 type AsProp<T extends ElementType> = {
   as?: T;
