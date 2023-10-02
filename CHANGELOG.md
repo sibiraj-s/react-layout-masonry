@@ -13,6 +13,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.0.7 (2023-10-02)
+
+#### Bug Fixes
+
+- Fix return type for Masonry component ([9b9bd1a](https://github.com/sibiraj-s/react-layout-masonry/commit/9b9bd1a))
+
 ## v1.0.6 (2023-08-25)
 
 #### Enhancements

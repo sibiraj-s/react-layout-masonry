@@ -1,6 +1,6 @@
 {
   "name": "react-layout-masonry",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Responsive masonry layout for React",
   "type": "module",
   "repository": "https://github.com/sibiraj-s/react-layout-masonry.git",
