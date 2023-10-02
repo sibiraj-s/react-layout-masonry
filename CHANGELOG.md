@@ -13,6 +13,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.1.0 (2023-10-02)
+
+#### Bug Fixes
+
+- Support Array syntax for breakpoints ([4e6c69c](https://github.com/sibiraj-s/react-layout-masonry/commit/4e6c69c))
+
 ## v1.0.7 (2023-10-02)
 
 #### Bug Fixes
