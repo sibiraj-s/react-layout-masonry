@@ -30,6 +30,12 @@
     "react-masonry",
     "react-layout-masonry"
   ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/sibiraj-s"
+    }
+  ],
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
