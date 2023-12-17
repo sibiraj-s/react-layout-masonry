@@ -49,17 +49,17 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@testing-library/react": "^14.1.2",
-    "@types/react": "^18.2.42",
-    "@vitest/coverage-v8": "^1.0.1",
+    "@types/react": "^18.2.45",
+    "@vitest/coverage-v8": "^1.0.4",
     "commitlint-config-non-conventional": "^1.0.1",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-config-pegasus": "^5.0.0",
     "eslint-config-prettier": "^9.1.0",
     "happy-dom": "^12.10.3",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "prettier-plugin-astro": "^0.12.2",
     "prop-types": "^15.8.1",
     "publint": "^0.2.6",
@@ -67,6 +67,6 @@
     "react-dom": "^18.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.1"
+    "vitest": "^1.0.4"
   }
 }
