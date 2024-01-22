@@ -47,26 +47,26 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
+    "@commitlint/cli": "^18.4.4",
     "@testing-library/react": "^14.1.2",
-    "@types/react": "^18.2.45",
-    "@vitest/coverage-v8": "^1.0.4",
+    "@types/react": "^18.2.48",
+    "@vitest/coverage-v8": "^1.2.1",
     "commitlint-config-non-conventional": "^1.0.1",
     "eslint": "^8.56.0",
     "eslint-config-pegasus": "^5.0.0",
     "eslint-config-prettier": "^9.1.0",
-    "happy-dom": "^12.10.3",
+    "happy-dom": "^13.2.1",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
-    "prettier-plugin-astro": "^0.12.2",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0",
     "prop-types": "^15.8.1",
-    "publint": "^0.2.6",
+    "publint": "^0.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.4"
+    "vitest": "^1.2.1"
   }
 }
