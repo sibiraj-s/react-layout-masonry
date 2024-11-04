@@ -13,6 +13,13 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v1.2.0 (2024-11-04)
+
+#### Features
+
+- Support react 19 ([86d6391](https://github.com/sibiraj-s/react-layout-masonry/commit/86d6391))
+- Support for server components with `use client` ([ab796bc](https://github.com/sibiraj-s/react-layout-masonry/commit/ab796bc))
+
 ## v1.1.0 (2023-10-02)
 
 #### Bug Fixes
