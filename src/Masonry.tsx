@@ -6,7 +6,7 @@ import { MasonryItemContext } from './context';
 
 type MasonryComponent = <C extends ElementType = 'div'>(props: MasonryProps<C>) => ReactElement<C>;
 
-const MasonryBase = <T extends ElementType = 'div'>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
+const MasonryBase = <T extends ElementType>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
   const { gap, as: Component = 'div', columnProps, columns, ...rest } = props;
 
   const uniq = useId();
