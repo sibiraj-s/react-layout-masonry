@@ -44,7 +44,7 @@
     "prepublishOnly": "is-ci || (npm run build && publint)"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^18 || ^19"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
