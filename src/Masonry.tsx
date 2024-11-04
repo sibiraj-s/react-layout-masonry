@@ -1,3 +1,5 @@
+'use client';
+
 import { ElementType, ReactElement, forwardRef, useId } from 'react';
 
 import { MasonryProps, PolymorphicRef } from './types';
