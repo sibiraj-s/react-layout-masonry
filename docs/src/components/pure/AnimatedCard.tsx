@@ -1,5 +1,5 @@
 import { type FC, useMemo, useRef } from 'react';
-import { type Variants, motion, useInView } from 'framer-motion';
+import { type Variants, motion, useInView } from 'motion/react';
 
 import { useMasonryItem } from '../../../../src';
 import getRandomAuthor from './random-author';

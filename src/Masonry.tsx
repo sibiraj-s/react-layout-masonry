@@ -1,26 +1,19 @@
 'use client';
 
-import { ElementType, ReactElement, forwardRef, useId } from 'react';
+import { ElementType, useId } from 'react';
 
-import { MasonryProps, PolymorphicRef } from './types';
+import { MasonryProps } from './types';
 import useMasonry from './useMasonry';
 import { MasonryItemContext } from './context';
 
-type MasonryComponent = <C extends ElementType = 'div'>(props: MasonryProps<C>) => ReactElement<C>;
-
-const MasonryBase = <T extends ElementType>(props: MasonryProps<T>, forwaredRef: PolymorphicRef<T>) => {
-  const { gap, as: Component = 'div', columnProps, columns, ...rest } = props;
+export const Masonry = <T extends ElementType = 'div'>(props: MasonryProps<T>) => {
+  const { gap, as: Component = 'div', columnProps, columns, ref, ...rest } = props;
 
   const uniq = useId();
   const columnsChildren = useMasonry(props.children, columns);
 
   return (
-    <Component
-      data-masonry-id={`Masonry-${uniq}`}
-      {...rest}
-      style={{ display: 'flex', gap, ...rest.style }}
-      ref={forwaredRef}
-    >
+    <Component {...rest} data-masonry-id={`Masonry-${uniq}`} style={{ display: 'flex', gap, ...rest.style }} ref={ref}>
       {columnsChildren.map((column, index) => {
         return (
           <Component
@@ -37,12 +30,12 @@ const MasonryBase = <T extends ElementType>(props: MasonryProps<T>, forwaredRef:
           >
             {column.map((child, childIndex) => {
               return (
-                <MasonryItemContext.Provider
+                <MasonryItemContext
                   value={{ column: index, position: childIndex }}
                   key={`Masonry__Column_Child_${uniq}_${childIndex}`}
                 >
                   {child}
-                </MasonryItemContext.Provider>
+                </MasonryItemContext>
               );
             })}
           </Component>
@@ -52,4 +45,4 @@ const MasonryBase = <T extends ElementType>(props: MasonryProps<T>, forwaredRef:
   );
 };
 
-export const Masonry = forwardRef(MasonryBase) as MasonryComponent;
+export default Masonry;
