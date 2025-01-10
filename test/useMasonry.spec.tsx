@@ -31,7 +31,6 @@ describe('UseMasonry', () => {
     expect(result.current.length).toBe(4);
 
     result.current.forEach((column) => {
-      // eslint-disable-next-line max-nested-callbacks
       column.forEach((item) => {
         expect(isValidElement(item)).toBe(true);
       });
