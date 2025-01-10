@@ -10,7 +10,7 @@ const arrayToBreakpoints = (breakPoints: BreakPointsArray): BreakPoints => {
 
     return {
       ...obj,
-      ...{ [defaultBreakpoints[bpIndex]]: bpValue },
+      [defaultBreakpoints[bpIndex]]: bpValue,
     };
   }, {});
 };

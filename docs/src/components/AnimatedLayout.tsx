@@ -2,7 +2,7 @@ import { type FC, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, type Variants, motion, useInView } from 'motion/react';
 
 import { diy, fashion, food } from './images';
-import Masonry from '../../../../src';
+import Masonry from '../../../src';
 import Card from './AnimatedCard';
 
 const variants: Variants = {

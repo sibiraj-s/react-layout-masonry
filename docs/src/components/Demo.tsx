@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import Masonry, { type Columns } from '../../../../src';
+import Masonry, { type Columns } from '../../../src';
 import Card from './Card';
 
 interface DemoProps {
