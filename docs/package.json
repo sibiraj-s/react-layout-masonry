@@ -11,20 +11,20 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.0",
-    "@astrojs/starlight": "^0.32.1",
+    "@astrojs/react": "^4.2.1",
+    "@astrojs/starlight": "^0.32.3",
     "@astrojs/starlight-tailwind": "^3.0.0",
     "@astrojs/tailwind": "^5.1.5",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.11",
     "@types/react-dom": "^19.0.4",
-    "astro": "^5.3.1",
-    "motion": "^12.4.7",
+    "astro": "^5.5.3",
+    "motion": "^12.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   },
   "devDependencies": {
-    "prettier": "^3.5.2"
+    "prettier": "^3.5.3"
   }
 }

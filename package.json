@@ -47,24 +47,24 @@
     "react": ">=19"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.7.1",
+    "@commitlint/cli": "^19.8.0",
     "@testing-library/react": "^16.2.0",
-    "@types/react": "^19.0.10",
-    "@vitest/coverage-v8": "^3.0.7",
+    "@types/react": "^19.0.11",
+    "@vitest/coverage-v8": "^3.0.9",
     "commitlint-config-non-conventional": "^1.0.1",
-    "happy-dom": "^17.1.8",
+    "happy-dom": "^17.4.4",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "lint-staged": "^15.4.3",
-    "oxlint": "^0.15.12",
-    "prettier": "^3.5.2",
+    "lint-staged": "^15.5.0",
+    "oxlint": "^0.16.0",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prop-types": "^15.8.1",
-    "publint": "^0.3.6",
+    "publint": "^0.3.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tsup": "^8.4.0",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.7"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
   }
 }
