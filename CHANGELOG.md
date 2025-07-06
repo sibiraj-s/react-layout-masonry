@@ -13,6 +13,19 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.0 (2025-07-06)
+
+#### Breaking Changes
+
+Changed breakpoint matching logic from `>` to `>=`. When window width exactly matches a breakpoint value, that breakpoint is now active instead of the previous one. This aligns with standard CSS media query behavior where `min-width: 768px` activates at exactly 768px. ([c4b4cbb](https://github.com/sibiraj-s/react-layout-masonry/commit/c4b4cbb))
+
+> [!NOTE]
+> If you rely on the previous behavior where a window width of exactly 768px would use the 640px breakpoint configuration, you may need to adjust your breakpoint values accordingly.
+
+#### Bug Fixes
+
+- fix rendering in nextjs server components ([dd30824](https://github.com/sibiraj-s/react-layout-masonry/commit/dd30824))
+
 ## v1.2.0 (2024-11-04)
 
 #### Features
