@@ -1,24 +1,29 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+
+const isBrowser = typeof window !== 'undefined';
+
+const useIsomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
 
 const useWindowWidth = (isResponsive: boolean = true): number => {
-  const [windowWidth, setWindowSize] = useState(0);
+  const [windowWidth, setWindowSize] = useState(isBrowser ? window.innerWidth : 0);
 
-  const handleResize = useCallback(() => {
+  const updateWindowSize = useCallback(() => {
     setWindowSize(window.innerWidth);
   }, []);
 
   useEffect(() => {
-    handleResize();
     if (isResponsive) {
-      window.addEventListener('resize', handleResize);
-    } else {
-      window.removeEventListener('resize', handleResize);
+      window.addEventListener('resize', updateWindowSize);
     }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', updateWindowSize);
     };
-  }, [isResponsive, handleResize]);
+  }, [isResponsive, updateWindowSize]);
+
+  useIsomorphicLayoutEffect(() => {
+    updateWindowSize();
+  }, [updateWindowSize]);
 
   return windowWidth;
 };
