@@ -7,6 +7,9 @@ const config = defineConfig({
   dts: true,
   sourcemap: true,
   minify: Boolean(process.env.CI),
+  outputOptions: {
+    exports: 'named',
+  },
 });
 
 export default config;
