@@ -1,0 +1,3 @@
+{
+  "plugins": ["oxc", "typescript", "react", "react-perf", "unicorn", "promise", "vitest"]
+}
