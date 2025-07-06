@@ -31,7 +31,7 @@ const findBreakpoint = (breakpoints: BreakPointSpec, windowWidth: number): numbe
   let bp = null;
 
   for (const breakPoint of sortedBreakPoints) {
-    if (windowWidth > breakPoint) {
+    if (windowWidth >= breakPoint) {
       bp = breakPoint;
     }
   }

@@ -125,7 +125,7 @@ describe('Masonry: Responsive Columns', () => {
   });
 
   const breakpoints = { 640: 1, 768: 2, 1024: 3, 1280: 4, 1536: 5 };
-  const breakpointSpec = Object.entries(breakpoints).map(([key, value]) => [value <= 1 ? 1 : value - 1, Number(key)]);
+  const breakpointSpec = Object.entries(breakpoints).map(([key, value]) => [value, Number(key)]);
   const items = createItems(10);
 
   it.each(breakpointSpec)('should render %i columns with breakpoint %i', (noOfColumns, windowWidth) => {

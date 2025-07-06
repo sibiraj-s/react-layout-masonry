@@ -2,10 +2,11 @@ import { describe, expect, it } from 'vitest';
 
 import findBreakpoint, { normalizeBreakPoints } from '../src/breakpoints';
 
+// array of [expectedBreakpoint, windowWidth]
 const specs = [
   [640, 700],
   [640, 500],
-  [640, 768],
+  [768, 768],
   [768, 780],
   [1024, 1030],
   [1280, 1300],
