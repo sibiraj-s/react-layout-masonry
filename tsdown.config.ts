@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 const config = defineConfig({
   entry: ['src/index.ts'],
@@ -6,7 +6,6 @@ const config = defineConfig({
   format: ['cjs', 'esm'],
   dts: true,
   sourcemap: true,
-  splitting: false,
   minify: Boolean(process.env.CI),
 });
 

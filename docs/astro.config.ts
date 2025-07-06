@@ -1,18 +1,24 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sibiraj-s.github.io',
   base: '/react-layout-masonry',
+
   integrations: [
     starlight({
       title: 'React Layout Masonry',
-      social: {
-        github: 'https://github.com/sibiraj-s/react-layout-masonry',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/sibiraj-s/react-layout-masonry',
+        },
+      ],
       editLink: {
         baseUrl: 'https://github.com/sibiraj-s/react-layout-masonry/tree/master/docs/',
       },
@@ -36,11 +42,12 @@ export default defineConfig({
           },
         },
       ],
-      customCss: ['./src/tailwind.css', './src/assets/styles.css'],
-    }),
-    tailwind({
-      applyBaseStyles: false,
+      customCss: ['./src/styles/tailwind.css'],
     }),
     react(),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
