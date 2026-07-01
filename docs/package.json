@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.0",
-    "@astrojs/starlight": "^0.38.1",
+    "@astrojs/react": "^6.0.0",
+    "@astrojs/starlight": "^0.41.2",
     "@astrojs/starlight-tailwind": "^5.0.0",
-    "@tailwindcss/vite": "^4.2.1",
+    "@tailwindcss/vite": "^4.3.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.0.3",
+    "astro": "^7.0.4",
     "motion": "^12.35.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
