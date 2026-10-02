@@ -13,6 +13,20 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.1.0 (2026-10-02)
+
+#### Features
+
+- Add `fallback` prop, rendered until the window width is known for responsive columns ([dcadd32](https://github.com/sibiraj-s/react-layout-masonry/commit/dcadd32))
+
+#### Bug Fixes
+
+- Fix hydration mismatch with responsive columns on server-rendered pages ([18a7d88](https://github.com/sibiraj-s/react-layout-masonry/commit/18a7d88))
+
+#### Dependency Updates
+
+- Bump dependencies ([b752a51](https://github.com/sibiraj-s/react-layout-masonry/commit/b752a51))
+
 ## v2.0.0 (2025-07-06)
 
 #### Breaking Changes
