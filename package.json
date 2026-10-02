@@ -50,6 +50,7 @@
     "@commitlint/cli": "^21.2.3",
     "@testing-library/react": "^16.3.3",
     "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitest/coverage-v8": "^5.0.3",
     "commitlint-config-non-conventional": "^1.0.1",
     "happy-dom": "^20.14.5",

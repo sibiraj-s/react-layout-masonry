@@ -1,31 +1,22 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
-const isBrowser = typeof window !== 'undefined';
+const subscribe = (onChange: () => void) => {
+  window.addEventListener('resize', onChange);
 
-const useIsomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
+  return () => {
+    window.removeEventListener('resize', onChange);
+  };
+};
+
+const noopSubscribe = () => () => {};
+
+const getWidth = () => window.innerWidth;
+
+// Width is unknown on the server. Hydration uses the same value so markup matches, then re-renders with the real width
+const getServerWidth = () => 0;
 
 const useWindowWidth = (isResponsive: boolean = true): number => {
-  const [windowWidth, setWindowSize] = useState(isBrowser ? window.innerWidth : 0);
-
-  const updateWindowSize = useCallback(() => {
-    setWindowSize(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    if (isResponsive) {
-      window.addEventListener('resize', updateWindowSize);
-    }
-
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
-  }, [isResponsive, updateWindowSize]);
-
-  useIsomorphicLayoutEffect(() => {
-    updateWindowSize();
-  }, [updateWindowSize]);
-
-  return windowWidth;
+  return useSyncExternalStore(isResponsive ? subscribe : noopSubscribe, getWidth, getServerWidth);
 };
 
 export default useWindowWidth;
