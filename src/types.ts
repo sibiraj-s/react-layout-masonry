@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
+import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactNode } from 'react';
 
 export type BreakPoints = Record<number, number> | Array<number | undefined>;
 export type BreakPointsArray = Array<number | undefined>;
@@ -25,5 +25,6 @@ type MasonryOwnProps<T extends ElementType> = {
   columns?: Columns;
   gap?: number;
   columnProps?: PolymorphicComponentPropWithRef<T, {}>;
+  fallback?: ReactNode;
 };
 export type MasonryProps<T extends ElementType> = PolymorphicComponentPropWithRef<T, MasonryOwnProps<T>>;

@@ -1,6 +1,7 @@
 import { act } from 'react';
 import { renderToString } from 'react-dom/server';
 import { hydrateRoot, type Root } from 'react-dom/client';
+import { render } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import Masonry from '../src';
@@ -71,5 +72,79 @@ describe('Masonry: Server rendering', () => {
 
     const columns = [...container.querySelectorAll('[data-masonry-column]')].map((column) => column.textContent);
     expect(columns).toEqual(['15', '26', '37', '48']);
+  });
+});
+
+describe('Masonry: Fallback', () => {
+  let root: Root | undefined;
+
+  afterEach(() => {
+    act(() => root?.unmount());
+    root = undefined;
+    window.innerWidth = originalInnerWidth;
+  });
+
+  const items = Array.from({ length: 4 }, (_, index) => <div key={index}>{index + 1}</div>);
+  const fallback = <p data-testid="fallback">Loading</p>;
+
+  it('should render the fallback on the server for responsive columns', () => {
+    const container = document.createElement('div');
+    container.innerHTML = renderToString(
+      <Masonry columns={breakpoints} fallback={fallback}>
+        {items}
+      </Masonry>,
+    );
+
+    expect(container.querySelector('[data-testid="fallback"]')).not.toBeNull();
+    expect(countColumns(container)).toBe(0);
+  });
+
+  it('should ignore the fallback on the server for fixed columns', () => {
+    const container = document.createElement('div');
+    container.innerHTML = renderToString(
+      <Masonry columns={3} fallback={fallback}>
+        {items}
+      </Masonry>,
+    );
+
+    expect(container.querySelector('[data-testid="fallback"]')).toBeNull();
+    expect(countColumns(container)).toBe(3);
+  });
+
+  it('should hydrate the fallback and then render the layout', async () => {
+    const app = (
+      <Masonry columns={breakpoints} fallback={fallback}>
+        {items}
+      </Masonry>
+    );
+
+    const container = document.createElement('div');
+    container.innerHTML = renderToString(app);
+
+    window.innerWidth = 1280;
+    const errors: unknown[] = [];
+
+    await act(async () => {
+      root = hydrateRoot(container, app, {
+        onRecoverableError: (error: unknown) => errors.push(error),
+      });
+    });
+
+    expect(errors).toEqual([]);
+    expect(container.querySelector('[data-testid="fallback"]')).toBeNull();
+    expect(countColumns(container)).toBe(4);
+  });
+
+  it('should not render the fallback for a client only render', () => {
+    window.innerWidth = 1280;
+
+    const { container } = render(
+      <Masonry columns={breakpoints} fallback={fallback}>
+        {items}
+      </Masonry>,
+    );
+
+    expect(container.querySelector('[data-testid="fallback"]')).toBeNull();
+    expect(countColumns(container)).toBe(4);
   });
 });

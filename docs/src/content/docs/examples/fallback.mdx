@@ -1,0 +1,13 @@
+---
+title: Fallback
+description: Fallback while hydrating a server-rendered layout with React Layout Masonry.
+tableOfContents: false
+sidebar:
+  order: 4
+---
+
+import ExampleFallback from '../../../components/FallbackLayout';
+
+This page is server-rendered. The skeleton is the `fallback`, shown until the page hydrates and the window width is known. Hydration is delayed by 2 seconds here so you can see it; in a real app it is replaced as soon as React hydrates. Reload the page to see it again.
+
+<ExampleFallback client:delay={2000} />

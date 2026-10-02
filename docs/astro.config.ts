@@ -1,8 +1,24 @@
+import { fileURLToPath } from 'node:url';
+
 import { defineConfig } from 'astro/config';
+import type { AstroIntegration } from 'astro';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 
 import tailwindcss from '@tailwindcss/vite';
+
+// `client:delay={ms}` hydrates a component after a delay, used to demo server-rendered fallbacks
+const delayDirective: AstroIntegration = {
+  name: 'client:delay',
+  hooks: {
+    'astro:config:setup': ({ addClientDirective }) => {
+      addClientDirective({
+        name: 'delay',
+        entrypoint: fileURLToPath(new URL('./src/directives/delay.ts', import.meta.url)),
+      });
+    },
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -43,6 +59,7 @@ export default defineConfig({
       customCss: ['./src/styles/tailwind.css'],
     }),
     react(),
+    delayDirective,
   ],
 
   vite: {

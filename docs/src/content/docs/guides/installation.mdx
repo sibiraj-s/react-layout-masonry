@@ -93,8 +93,29 @@ The `columnProps` prop allows you to apply additional props to the container of 
 </Masonry>
 ```
 
+## Fallback
+
+With responsive columns, the number of columns depends on the window width, which is not known during server rendering (Next.js, Remix, Astro). Until the page hydrates, the layout is rendered with the smallest breakpoint and then switches to the right number of columns.
+
+The `fallback` prop lets you render a placeholder in that time instead. Here's an example:
+
+```jsx
+<Masonry columns={{ 640: 1, 768: 2, 1024: 3, 1280: 5 }} gap={16} fallback={<LoadingGrid />}>
+  {/* ... */}
+</Masonry>
+```
+
+- The fallback is rendered on the server and during hydration, then replaced with the layout.
+- It is ignored for fixed columns, since they render the same on the server and the client.
+- Client-only apps never render it, since the window width is known on the first render.
+
+:::note
+Content inside the fallback is what search engines and users see in the server-rendered HTML. Leave `fallback` unset if the items should be part of that HTML.
+:::
+
 ## Props
 
 - `columns` (number or object, required): The number of columns in the masonry layout, or an object with breakpoints and corresponding column counts.
 - `gap` (number, optional): The spacing between columns and rows in pixels. Defaults to 0.
 - `columnProps` (object, optional): Additional props to be applied to each column, such as className for styling.
+- `fallback` (ReactNode, optional): Rendered in place of the layout until the window width is known. See [Fallback](#fallback).

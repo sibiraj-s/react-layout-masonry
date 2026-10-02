@@ -113,6 +113,7 @@ The `columnProps` prop allows you to apply additional props to the container of 
 - `columns` (number or object, required): The number of columns in the masonry layout, or an object with breakpoints and corresponding column counts.
 - `gap` (number, optional): The spacing between columns and rows in pixels. Defaults to 0.
 - `columnProps` (object, optional): Additional props to be applied to each column, such as className for styling.
+- `fallback` (ReactNode, optional): Rendered instead of the layout during server rendering and hydration when `columns` uses breakpoints, since the window width is not known yet. Client-only renders show the layout straight away.
 
 ## Examples
 

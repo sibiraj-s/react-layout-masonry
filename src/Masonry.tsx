@@ -4,13 +4,20 @@ import { ElementType, useId } from 'react';
 
 import { MasonryProps } from './types';
 import useMasonry from './useMasonry';
+import useIsClient from './useIsClient';
 import { MasonryItemContext } from './context';
 
 export const Masonry = <T extends ElementType = 'div'>(props: MasonryProps<T>) => {
-  const { gap, as: Component = 'div', columnProps, columns, ref, ...rest } = props;
+  const { gap, as: Component = 'div', columnProps, columns, fallback, ref, ...rest } = props;
 
   const uniq = useId();
+  const isClient = useIsClient();
   const columnsChildren = useMasonry(props.children, columns);
+
+  // Breakpoints need the window width, which is unknown until hydration completes
+  if (fallback !== undefined && typeof columns === 'object' && !isClient) {
+    return fallback;
+  }
 
   return (
     <Component {...rest} data-masonry-id={`Masonry-${uniq}`} style={{ display: 'flex', gap, ...rest.style }} ref={ref}>
